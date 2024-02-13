@@ -99,6 +99,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Expanded(
                           child: Container(
+                            padding: const EdgeInsets.all(10),
                             margin: const EdgeInsets.only(top: 20),
                             height: h * 0.3,
                             width: w * 0.8,
@@ -109,11 +110,44 @@ class _HomePageState extends State<HomePage> {
                             child: Row(
                               children: [
                                 GestureDetector(
-                                  // Navigator.of(context).pushNamed(MyRoutes.DetailPage);
+                                  onTap: () {
+                                    Navigator.of(context)
+                                        .pushNamed(MyRoutes.DetailPage);
+                                  },
                                   child: Expanded(
                                     child: Container(
                                       height: h * 0.3,
-                                      width: w * 0.8,
+                                      width: w * 0.4,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(20),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey,
+                                            offset: Offset(4, 4),
+                                            blurRadius: 3,
+                                          )
+                                        ],
+                                      ),
+                                      child: Image.network(
+                                        allproducts[e * 2]['thumbnail'],
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: w * 0.02,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context)
+                                        .pushNamed(MyRoutes.DetailPage);
+                                  },
+                                  child: Expanded(
+                                    child: Container(
+                                      height: h * 0.3,
+                                      width: w * 0.4,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.circular(20),
@@ -122,29 +156,13 @@ class _HomePageState extends State<HomePage> {
                                             color: Colors.grey,
                                             offset: Offset(4, 4),
                                             blurRadius: 3,
-                                          )
+                                          ),
                                         ],
                                       ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: w * 0.02,
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    height: h * 0.3,
-                                    width: w * 0.8,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(20),
-                                      boxShadow: const [
-                                        BoxShadow(
-                                          color: Colors.grey,
-                                          offset: Offset(4, 4),
-                                          blurRadius: 3,
-                                        )
-                                      ],
+                                      child: Image.network(
+                                        allproducts[e]['thumbnail'],
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
