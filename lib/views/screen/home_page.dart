@@ -116,12 +116,12 @@ class _HomePageState extends State<HomePage> {
                                   },
                                   child: Expanded(
                                     child: Container(
-                                      height: h * 0.3,
-                                      width: w * 0.4,
+                                      height: h * 0.2,
+                                      width: w * 0.3,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.circular(20),
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             color: Colors.grey,
                                             offset: Offset(4, 4),
@@ -129,9 +129,14 @@ class _HomePageState extends State<HomePage> {
                                           )
                                         ],
                                       ),
-                                      child: Image.network(
-                                        allproducts[e * 2]['thumbnail'],
-                                        fit: BoxFit.cover,
+                                      child: Container(
+                                        height: h * 0.2,
+                                        width: w * 0.3,
+                                        color: Colors.blue,
+                                        child: Image.network(
+                                          allproducts[e * 2]['thumbnail'],
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -159,9 +164,14 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                         ],
                                       ),
-                                      child: Image.network(
-                                        allproducts[e]['thumbnail'],
-                                        fit: BoxFit.cover,
+                                      child: Container(
+                                        height: h * 0.2,
+                                        width: w * 0.3,
+                                        color: Colors.blue,
+                                        child: Image.network(
+                                          allproducts[e]['thumbnail'],
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
